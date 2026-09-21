@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mijn Portfolio</title>
+
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <h1 class="header-nav">Walat Hamasahid</h1>
+                <ul class="nav-links">
+                    <li><a href="../html/index.html">Over mij</a></li>
+                    <li><a href="../html/projects.html">Projecten</a></li>
+                    <li><a href="../html/blog.html">Blog</a></li>
+                    <li><a class="nav-active" href="../html/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form id="contact-form" novalidate>
+                <label for="naam">Naam</label>
+                <input id="naam" required minlength="2" aria-describedby="naam-error" aria-invalid="false">
+                <span id="naam-error" role="alert"></span>
+
+                <label for="email">Email</label>
+                <input id="email" type="email" required aria-describedby="email-error" aria-invalid="false">
+                <span id="email-error" role="alert"></span>
+                
+                <label for="bericht">Bericht</label>
+                <textarea id="bericht" required minlength="1" aria-describedby="bericht-error" aria-invalid="false"></textarea>
+                <span id="bericht-error" role="alert"></span>
+
+                <button type="submit">Versturen</button>
+                <div id="form-status" aria-live="polite"></div>
+            </form>
+        </main>
+
+        <footer>
+            <p>© 2026 Walat. Alle rechten voorbehouden.</p>
+        </footer>
+
+        <script src="../script.js"></script>
+
+    </body>
+
+</html>
