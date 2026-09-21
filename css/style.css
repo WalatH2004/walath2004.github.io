@@ -497,3 +497,161 @@ footer p{
 .blog-flexbox-terug:hover{
     color:rgb(125, 191, 130)
 }
+
+/* CONTACT PAGINA VANAF HIER*/
+#contact-form, #contact-form * {
+    box-sizing: border-box;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 640px;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+#contact-form input, #contact-form textarea, #contact-form button {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px;
+    font: inherit;
+}
+#contact-form textarea {
+    min-height: 160px; resize: vertical; 
+}
+
+/*MEDIA QUERIES VANAF HIER*/
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .nav-bar, .hero, .projecten-pagina, .projecten-simulator,
+    .projecten-fridge, .blog-pagina, .blog-semantisch-detail,
+    .blog-flexbox-detail {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .nav-links { gap: 16px; padding-left: 0; }
+    .hero, .projecten-simulator, .projecten-fridge { gap: 40px; }
+    .hero > *, .projecten-simulator > *, .projecten-fridge > * {
+        min-width: 0;
+        flex: 1;
+    }
+    .foto-walat { width: 45%; max-width: 500px; margin-left: 0; }
+    .project-grid { gap: 40px; }
+    .project-card { flex: 1; min-width: 0; }
+    footer p { margin-left: 48px; }
+}
+
+/* Tablet en mobiel: kleinere marges en een rustige leesvolgorde. */
+@media (max-width: 1023px) {
+    *, *::before, *::after { box-sizing: border-box; }
+
+    main { overflow-wrap: anywhere; }
+    main img { display: block; max-width: 100%; height: auto; }
+
+    .nav-bar {
+        padding: 20px 32px 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .nav-bar h1 { margin: 0; text-align: center; }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 4px 16px;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+    }
+    .nav-links li { min-width: 0; max-width: 100%; }
+    .nav-links a {
+        display: block;
+        padding: 12px 8px;
+        min-height: 44px;
+        text-align: center;
+        border-bottom: 2px solid transparent;
+        overflow-wrap: anywhere;
+    }
+    .nav-links a.nav-active, .nav-links a:hover {
+        border-bottom-color: rgb(125, 191, 130);
+        padding-bottom: 12px;
+    }
+
+    .hero, .projecten-pagina, .projecten-simulator, .projecten-fridge,
+    .blog-pagina, .blog-semantisch-detail, .blog-flexbox-detail {
+        padding: 40px 32px;
+    }
+    .hero, .projecten-simulator, .projecten-fridge {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 32px;
+    }
+    .hero-text, .projecten-simulator-intro, .projecten-fridge-intro {
+        width: 100%;
+        max-width: 640px;
+        min-width: 0;
+    }
+    .hero p { line-height: 1.7; }
+    .foto-walat {
+        width: 100%;
+        max-width: 360px;
+        margin: 0;
+    }
+    .image-simulator-container, .image-fridge-container {
+        width: 100%;
+        max-width: 550px;
+    }
+    .image-simulator-container img, .image-fridge-container img {
+        max-width: none;
+    }
+    .project-grid, .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+    }
+    .project-card, .blog-card { min-width: 0; }
+    .project-card img { height: auto; }
+    .project-card p { line-height: 1.6; }
+    .blog-card { padding: 24px; }
+    .blog-semantisch-post, .blog-flexbox-post {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+    footer { max-height: none; padding: 24px 32px; }
+    footer p { margin: 0; font-size: 14px; line-height: 1.5; }
+}
+
+/* Smalle tablets: kaarten krijgen genoeg ruimte in één kolom. */
+@media (max-width: 640px) {
+    .project-grid, .blog-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Telefoon: compacte navigatie en kleinere koppen en marges. */
+@media (max-width: 480px) {
+    .nav-bar { padding: 20px 16px 8px; gap: 8px; }
+    .nav-links { gap: 0 4px; font-size: 14px; }
+    .nav-links a { padding-left: 8px; padding-right: 8px; }
+
+    .hero, .projecten-pagina, .projecten-simulator, .projecten-fridge,
+    .blog-pagina, .blog-semantisch-detail, .blog-flexbox-detail {
+        padding: 32px 24px;
+        gap: 28px;
+    }
+    main h1, .blog-intro h1, .blog-semantisch-header h1,
+    .blog-flexbox-header h1 { font-size: 30px; line-height: 1.2; }
+    main h2 { font-size: 23px; }
+    .hero p { margin-bottom: 0; }
+    .foto-walat { max-width: 280px; }
+    .blog-card { padding: 20px; }
+    .project-simulator-tekst, .project-fridge-tekst {
+        padding: 16px;
+        line-height: 1.65;
+    }
+    footer { padding: 20px 24px; }
+}
