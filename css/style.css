@@ -422,3 +422,78 @@ footer p{
 .blog-semantisch-terug:hover {
     color: rgb(125, 191, 130);
 }
+
+/* BLOG - FLEXBOX VANAF HIER */
+
+.blog-flexbox-detail{
+    padding: 30px 160px;
+}
+
+.blog-flexbox-post{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px 50px;
+    counter-reset: blog-stap;
+}
+
+.blog-flexbox-header{
+    grid-column: 1/-1;
+    margin-bottom: 10px;
+}
+
+.blog-flexbox-header h1{
+    font-size: 42px;
+    color:rgb(125, 191, 130);
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.blog-flexbox-header time{
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.blog-flexbox-post section{
+    margin: 0;
+    counter-increment: blog-stap;
+}
+
+.blog-flexbox-post section h2::before{
+    content: counter(blog-stap, decimal-leading-zero);
+
+    display: block;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.blog-flexbox-post h2{
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.blog-flexbox-post p{
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 17px;
+
+    margin: 0;
+}
+
+.blog-flexbox-terug{
+    display: block;
+    max-width: 1100px;
+    margin: 0 auto 20px auto;
+
+    text-decoration: none;
+    color: black
+}
+
+.blog-flexbox-terug:hover{
+    color:rgb(125, 191, 130)
+}
